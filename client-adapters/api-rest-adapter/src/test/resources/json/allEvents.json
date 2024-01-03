@@ -1,0 +1,76 @@
+[
+  {
+    "title": "AWS Cognito",
+    "description": "Après 2 ans à travailler sur la mise en place de cette solution au PMU, kevin llps nous présentera son retour d'expérience en détaillant les points forts et les points faibles de Cognito.",
+    "date": "2022-10-13T19:45:00",
+    "speaker": {
+      "firstname": "kevin",
+      "lastname": "llps"
+    }
+  },
+  {
+    "title": "Les chatbots",
+    "description": "Les chatbots sont un peu partout aujourd'hui. Voyons le pourquoi du comment et réalisons-en un avec Google DialogFlow, pour aider nos chers formateurs à se libérer des questions les plus fréquentes.",
+    "date": "2022-10-13T19:00:00",
+    "speaker": {
+      "firstname": "charlie",
+      "lastname": "lcs"
+    }
+  },
+  {
+    "title": "Mécanismes d'un bon jeu vidéo",
+    "description": "Passionné de jeux vidéo ou juste curieux de comprendre pourquoi ton copain ou ta copine passe toute ses soirées devant son écran au lieu de venir regarder Top Chef avec toi ? Je te conseille de venir écouter cette conférence pour comprendre une partie des mystères qui entourent l'univers très vaste du jeu vidéo.",
+    "date": "2022-10-13T21:00:00",
+    "speaker": {
+      "firstname": "iza",
+      "lastname": "elk"
+    }
+  },
+  {
+    "title": "AWS Lambda",
+    "description": "A travers ce retour d'expérience, kevin llps nous présentera le service AWS Lambda et dans quel contexte l'utiliser.",
+    "date": "2022-10-24T19:00:00",
+    "speaker": {
+      "firstname": "kevin",
+      "lastname": "llps"
+    }
+  },
+  {
+    "title": "AWS Lambda - Partie 2",
+    "description": "Deuxième partie de la présentation sur les lambdas AWS",
+    "date": "2023-02-09T19:00:00",
+    "speaker": {
+      "firstname": "kevin",
+      "lastname": "llps"
+    }
+  },
+  {
+    "title": "Git",
+    "description": "Présentation du fonctionnement de Git",
+    "date": "2022-09-06T12:00:00",
+    "speaker": {
+      "firstname": "chris",
+      "lastname": "arr"
+    },
+    "company": "MadMax Corp"
+  },
+  {
+    "title": "JEE",
+    "description": "Session pratique JEE",
+    "date": "2023-04-11T19:00:00",
+    "speaker": {
+      "firstname": "kevin",
+      "lastname": "llps"
+    },
+    "attendees": [
+      {
+        "firstname": "julien",
+        "lastname": "arnaud"
+      },
+      {
+        "firstname": "mickael",
+        "lastname": "dupont"
+      }
+    ]
+  }
+]

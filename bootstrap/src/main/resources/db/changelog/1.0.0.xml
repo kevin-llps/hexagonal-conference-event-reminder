@@ -1,0 +1,174 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="create-talk-1.0.0" author="kevin-llps">
+        <createTable tableName="talk">
+            <column name="talk_id" type="BINARY(16)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(1000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="speaker_id" type="BINARY(16)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-speaker-1.0.1" author="kevin-llps">
+        <createTable tableName="speaker">
+            <column name="speaker_id" type="BINARY(16)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="firstname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add-fk-talk-speaker-1.0.2" author="kevin-llps">
+        <addForeignKeyConstraint baseColumnNames="speaker_id"
+                                 baseTableName="talk"
+                                 constraintName="fk_talk_speaker"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="RESTRICT"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="speaker_id"
+                                 referencedTableName="speaker"
+                                 validate="true"/>
+    </changeSet>
+
+    <changeSet id="create-bbl-1.0.3" author="kevin-llps">
+        <createTable tableName="bbl">
+            <column name="bbl_id" type="BINARY(16)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(1000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="speaker_id" type="BINARY(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="company" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add-fk-bbl-speaker-1.0.4" author="kevin-llps">
+        <addForeignKeyConstraint baseColumnNames="speaker_id"
+                                 baseTableName="bbl"
+                                 constraintName="fk_bbl_speaker"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="RESTRICT"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="speaker_id"
+                                 referencedTableName="speaker"
+                                 validate="true"/>
+    </changeSet>
+
+    <changeSet id="create-practice-session-1.0.5" author="kevin-llps">
+        <createTable tableName="practice_session">
+            <column name="practice_session_id" type="BINARY(16)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="title" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="VARCHAR(1000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="speaker_id" type="BINARY(16)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add-fk-practice-session-speaker-1.0.6" author="kevin-llps">
+        <addForeignKeyConstraint baseColumnNames="speaker_id"
+                                 baseTableName="practice_session"
+                                 constraintName="fk_practice_session_speaker"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="RESTRICT"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="speaker_id"
+                                 referencedTableName="speaker"
+                                 validate="true"/>
+    </changeSet>
+
+    <changeSet id="create-practice-session-attendee-1.0.7" author="kevin-llps">
+        <createTable tableName="practice_session_attendee">
+            <column name="practice_session_attendee_id" type="BINARY(16)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="practice_session_id" type="BINARY(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="attendee_id" type="BINARY(16)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-attendee-1.0.8" author="kevin-llps">
+        <createTable tableName="attendee">
+            <column name="attendee_id" type="BINARY(16)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="firstname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add-fks-practice-session-attendee-1.0.9" author="kevin-llps">
+        <addForeignKeyConstraint baseColumnNames="attendee_id"
+                                 baseTableName="practice_session_attendee"
+                                 constraintName="fk_practice_session_attendee_attendee"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="attendee_id"
+                                 referencedTableName="attendee"
+                                 validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="practice_session_id"
+                                 baseTableName="practice_session_attendee"
+                                 constraintName="fk_practice_session_attendee_practice_session"
+                                 deferrable="false"
+                                 initiallyDeferred="false"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="practice_session_id"
+                                 referencedTableName="practice_session"
+                                 validate="true"/>
+    </changeSet>
+
+</databaseChangeLog>
