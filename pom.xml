@@ -21,6 +21,7 @@
         <slf4j-api.version>1.7.32</slf4j-api.version>
         <api-rest-adapter.version>1.0.0-SNAPSHOT</api-rest-adapter.version>
         <mysql-adapter.version>1.0.0-SNAPSHOT</mysql-adapter.version>
+        <archunit.version>0.17.0</archunit.version>
     </properties>
 
     <modules>
@@ -74,6 +75,11 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
                 <version>${slf4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.tngtech.archunit</groupId>
+                <artifactId>archunit-junit5</artifactId>
+                <version>${archunit.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

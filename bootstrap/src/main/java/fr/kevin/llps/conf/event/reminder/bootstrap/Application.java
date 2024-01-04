@@ -1,6 +1,6 @@
-package fr.kevin.llps.conf.event.reminder;
+package fr.kevin.llps.conf.event.reminder.bootstrap;
 
-import fr.kevin.llps.conf.event.reminder.configuration.AppConfiguration;
+import fr.kevin.llps.conf.event.reminder.bootstrap.config.AppConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;

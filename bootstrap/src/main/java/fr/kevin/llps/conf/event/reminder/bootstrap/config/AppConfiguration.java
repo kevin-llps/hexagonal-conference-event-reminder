@@ -1,13 +1,13 @@
-package fr.kevin.llps.conf.event.reminder.configuration;
+package fr.kevin.llps.conf.event.reminder.bootstrap.config;
 
-import fr.kevin.llps.conf.event.reminder.ports.client.EventFileParserPort;
-import fr.kevin.llps.conf.event.reminder.ports.client.EventServicePort;
-import fr.kevin.llps.conf.event.reminder.ports.infrastructure.AttendeeRepositoryPort;
-import fr.kevin.llps.conf.event.reminder.ports.infrastructure.BBLRepositoryPort;
-import fr.kevin.llps.conf.event.reminder.ports.infrastructure.PracticeSessionRepositoryPort;
-import fr.kevin.llps.conf.event.reminder.ports.infrastructure.TalkRepositoryPort;
-import fr.kevin.llps.conf.event.reminder.service.*;
-import fr.kevin.llps.conf.event.reminder.utils.DateUtils;
+import fr.kevin.llps.conf.event.reminder.domain.ports.client.EventFileParserPort;
+import fr.kevin.llps.conf.event.reminder.domain.ports.client.EventServicePort;
+import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.AttendeeRepositoryPort;
+import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.BBLRepositoryPort;
+import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.PracticeSessionRepositoryPort;
+import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.TalkRepositoryPort;
+import fr.kevin.llps.conf.event.reminder.domain.service.*;
+import fr.kevin.llps.conf.event.reminder.domain.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

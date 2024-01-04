@@ -1,20 +1,19 @@
-package fr.carbon.it.tech.prez.archi.bootstrap;
+package fr.kevin.llps.conf.event.reminder;
 
 public class PackagesAndLayers {
   // APPLICATION PACKAGES
-  public static final String BOOTSTRAP_PACKAGE = "fr.carbon.it.tech.prez.archi.hexa.bootstrap..";
-  public static final String DOMAIN_PACKAGE = "fr.carbon.it.tech.prez.archi.hexa.domain..";
-  public static final String CLIENT_PACKAGE = "fr.carbon.it.tech.prez.archi.hexa.client..";
+  public static final String BOOTSTRAP_PACKAGE = "fr.kevin.llps.conf.event.reminder.bootstrap..";
+  public static final String DOMAIN_PACKAGE = "fr.kevin.llps.conf.event.reminder.domain..";
+  public static final String CLIENT_PACKAGE = "fr.kevin.llps.conf.event.reminder.api.rest..";
   public static final String REST_ADAPTER_PACKAGE =
-      "fr.carbon.it.tech.prez.archi.hexa.client.rest..";
-  public static final String SERVER_PACKAGE = "fr.carbon.it.tech.prez.archi.hexa.server..";
+      "fr.kevin.llps.conf.event.reminder.api.rest..";
+  public static final String SERVER_PACKAGE = "fr.kevin.llps.conf.event.reminder.infrastructure..";
   public static final String POSTGRES_ADAPTER_PACKAGE =
-      "fr.carbon.it.tech.prez.archi.hexa.server.postgres..";
+      "fr.kevin.llps.conf.event.reminder.infrastructure.mysql..";
 
   // JAVA, FRAMEWORKS AND LIBRARIES PACKAGES
   public static final String JAVA_PACKAGE = "java..";
   public static final String LOMBOK_PACKAGE = "lombok..";
-  public static final String VAVR_PACKAGE = "io.vavr..";
   public static final String SLF4J = "org.slf4j..";
 
   // APPLICATION LAYERS

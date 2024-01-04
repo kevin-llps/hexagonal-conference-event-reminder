@@ -1,4 +1,4 @@
-package fr.carbon.it.tech.prez.archi.bootstrap.domain;
+package fr.kevin.llps.conf.event.reminder.domain;
 
 import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeTests;
 import com.tngtech.archunit.junit.AnalyzeClasses;
@@ -7,16 +7,16 @@ import com.tngtech.archunit.lang.ArchRule;
 
 import static com.tngtech.archunit.junit.CacheMode.FOREVER;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
-import static fr.carbon.it.tech.prez.archi.bootstrap.PackagesAndLayers.*;
+import static fr.kevin.llps.conf.event.reminder.PackagesAndLayers.*;
 
 @AnalyzeClasses(
-    packages = "fr.carbon.it.tech.prez.archi.hexa.domain",
+    packages = "fr.kevin.llps.conf.event.reminder.domain",
     cacheMode = FOREVER,
     importOptions = {DoNotIncludeTests.class})
 public class DomainDevelopmentRulesTest {
 
   private static final String[] allowedPackages = {
-    JAVA_PACKAGE, DOMAIN_PACKAGE, LOMBOK_PACKAGE, VAVR_PACKAGE, SLF4J
+    JAVA_PACKAGE, DOMAIN_PACKAGE, LOMBOK_PACKAGE, SLF4J, "org.apache.commons..", ""
   };
 
   private static final String[] allowedAccessors = {

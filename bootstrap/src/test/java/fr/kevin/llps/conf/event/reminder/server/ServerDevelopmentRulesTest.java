@@ -1,4 +1,4 @@
-package fr.carbon.it.tech.prez.archi.bootstrap.server;
+package fr.kevin.llps.conf.event.reminder.server;
 
 import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeTests;
 import com.tngtech.archunit.junit.AnalyzeClasses;
@@ -7,8 +7,8 @@ import com.tngtech.archunit.lang.ArchRule;
 
 import static com.tngtech.archunit.junit.CacheMode.FOREVER;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
-import static fr.carbon.it.tech.prez.archi.bootstrap.PackagesAndLayers.BOOTSTRAP_PACKAGE;
-import static fr.carbon.it.tech.prez.archi.bootstrap.PackagesAndLayers.SERVER_PACKAGE;
+import static fr.kevin.llps.conf.event.reminder.PackagesAndLayers.BOOTSTRAP_PACKAGE;
+import static fr.kevin.llps.conf.event.reminder.PackagesAndLayers.SERVER_PACKAGE;
 
 @AnalyzeClasses(
     packages = "fr.carbon.it.tech.prez.archi.hexa.server",
