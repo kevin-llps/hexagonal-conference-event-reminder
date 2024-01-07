@@ -8,7 +8,6 @@ import fr.kevin.llps.conf.event.reminder.infrastructure.mysql.repository.TalkRep
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -18,20 +17,6 @@ public class TalkRepositoryAdapter implements TalkRepositoryPort {
     private final TalkRepository talkRepository;
 
     private final TalkMapper talkMapper;
-
-    @Override
-    public void saveAll(List<Talk> talks) {
-        List<TalkEntity> talkEntities = talkMapper.mapToEntities(talks);
-
-        talkRepository.saveAll(talkEntities);
-    }
-
-    @Override
-    public List<Talk> findByDateLaterThan(LocalDateTime date) {
-        List<TalkEntity> talkEntities = talkRepository.findByDateLaterThan(date);
-
-        return talkMapper.mapToDomain(talkEntities);
-    }
 
     @Override
     public List<Talk> findAllOrderedByDate() {
