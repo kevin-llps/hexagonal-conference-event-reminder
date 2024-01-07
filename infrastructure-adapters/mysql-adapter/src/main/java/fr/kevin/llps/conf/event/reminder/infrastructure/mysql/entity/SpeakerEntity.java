@@ -25,10 +25,6 @@ public class SpeakerEntity {
     private String lastname;
     @OneToMany(mappedBy = "speaker", cascade = ALL)
     private List<TalkEntity> talks;
-    @OneToMany(mappedBy = "speaker", cascade = ALL)
-    private List<BBLEntity> bbls;
-    @OneToMany(mappedBy = "speaker", cascade = ALL)
-    private List<PracticeSessionEntity> practiceSessions;
 
     public SpeakerEntity(String firstname, String lastname) {
         this.firstname = firstname;

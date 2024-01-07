@@ -9,5 +9,5 @@ import java.time.LocalDateTime;
 public record TalkDto(@JsonProperty("title") String title,
                       @JsonProperty("description") String description,
                       @JsonProperty("date") LocalDateTime date,
-                      @JsonProperty("speaker") SpeakerDto speaker) implements EventDto {
+                      @JsonProperty("speaker") SpeakerDto speaker) {
 }

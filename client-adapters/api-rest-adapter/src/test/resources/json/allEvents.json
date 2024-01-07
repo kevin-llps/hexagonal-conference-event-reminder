@@ -43,34 +43,5 @@
       "firstname": "kevin",
       "lastname": "llps"
     }
-  },
-  {
-    "title": "Git",
-    "description": "Présentation du fonctionnement de Git",
-    "date": "2022-09-06T12:00:00",
-    "speaker": {
-      "firstname": "chris",
-      "lastname": "arr"
-    },
-    "company": "MadMax Corp"
-  },
-  {
-    "title": "JEE",
-    "description": "Session pratique JEE",
-    "date": "2023-04-11T19:00:00",
-    "speaker": {
-      "firstname": "kevin",
-      "lastname": "llps"
-    },
-    "attendees": [
-      {
-        "firstname": "julien",
-        "lastname": "arnaud"
-      },
-      {
-        "firstname": "mickael",
-        "lastname": "dupont"
-      }
-    ]
   }
 ]
