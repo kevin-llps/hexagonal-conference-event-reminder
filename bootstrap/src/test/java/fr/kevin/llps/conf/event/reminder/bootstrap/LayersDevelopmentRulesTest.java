@@ -1,4 +1,4 @@
-package fr.kevin.llps.conf.event.reminder;
+package fr.kevin.llps.conf.event.reminder.bootstrap;
 
 import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeTests;
 import com.tngtech.archunit.junit.AnalyzeClasses;
@@ -7,7 +7,7 @@ import com.tngtech.archunit.lang.ArchRule;
 
 import static com.tngtech.archunit.junit.CacheMode.FOREVER;
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
-import static fr.kevin.llps.conf.event.reminder.PackagesAndLayers.*;
+import static fr.kevin.llps.conf.event.reminder.bootstrap.PackagesAndLayers.*;
 
 @AnalyzeClasses(
         packages = "fr.kevin.llps.conf.event.reminder",
@@ -19,7 +19,7 @@ public class LayersDevelopmentRulesTest {
     public static final ArchRule LAYERS_DEVELOPMENT_RULE =
             layeredArchitecture()
                     .layer(DOMAIN_LAYER)
-                    .definedBy(DOMAIN_PACKAGE)// utiliser un objet class.getBasePackage() plutôt que hardcoder les packages
+                    .definedBy(DOMAIN_PACKAGE)
                     .layer(BOOTSTRAP_LAYER)
                     .definedBy(BOOTSTRAP_PACKAGE)
                     .layer(CLIENT_LAYER)
@@ -42,5 +42,5 @@ public class LayersDevelopmentRulesTest {
                     .mayOnlyBeAccessedByLayers(BOOTSTRAP_LAYER)
                     .whereLayer(POSTGRES_ADAPTER_LAYER)
                     .mayOnlyBeAccessedByLayers(BOOTSTRAP_LAYER)
-                    .because("That's the main and most important hexagonal architecture rule !");
+                    .ignoreDependency("fr.kevin.llps.conf.event.reminder.Application", "fr.kevin.llps.conf.event.reminder.bootstrap.config.AppConfiguration");
 }

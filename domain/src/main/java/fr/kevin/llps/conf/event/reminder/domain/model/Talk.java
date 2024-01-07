@@ -1,7 +1,7 @@
 package fr.kevin.llps.conf.event.reminder.domain.model;
 
+import fr.kevin.llps.conf.event.reminder.domain.DateUtils;
 import fr.kevin.llps.conf.event.reminder.domain.csv.CsvEvent;
-import fr.kevin.llps.conf.event.reminder.domain.utils.DateUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

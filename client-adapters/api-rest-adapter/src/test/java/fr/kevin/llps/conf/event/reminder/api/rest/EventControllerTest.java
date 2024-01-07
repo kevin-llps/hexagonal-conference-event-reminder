@@ -2,6 +2,7 @@ package fr.kevin.llps.conf.event.reminder.api.rest;
 
 import fr.kevin.llps.conf.event.reminder.api.rest.dto.EventDto;
 import fr.kevin.llps.conf.event.reminder.api.rest.mapper.EventDtoMapper;
+import fr.kevin.llps.conf.event.reminder.api.rest.samples.BBLDtoSample;
 import fr.kevin.llps.conf.event.reminder.domain.csv.CsvEvent;
 import fr.kevin.llps.conf.event.reminder.domain.model.Event;
 import fr.kevin.llps.conf.event.reminder.domain.ports.client.EventFileParserPort;
@@ -19,7 +20,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 import java.util.List;
 
-import static fr.kevin.llps.conf.event.reminder.api.rest.samples.BBLDtoSample.oneBBLDto;
 import static fr.kevin.llps.conf.event.reminder.api.rest.samples.BBLSample.oneBBL;
 import static fr.kevin.llps.conf.event.reminder.api.rest.samples.CsvEventSample.csvEventList;
 import static fr.kevin.llps.conf.event.reminder.api.rest.samples.PracticeSessionDtoSample.onePracticeSessionDto;
@@ -82,7 +82,7 @@ class EventControllerTest {
         events.add(onePracticeSession());
 
         List<EventDto> eventDtoList = new ArrayList<>(talkDtoList());
-        eventDtoList.add(oneBBLDto());
+        eventDtoList.add(BBLDtoSample.oneBBLDto());
         eventDtoList.add(onePracticeSessionDto());
 
         when(eventService.getUpcomingEvents()).thenReturn(events);

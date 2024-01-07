@@ -15,29 +15,25 @@ import static jakarta.persistence.CascadeType.ALL;
 @Table(name = "talk")
 public class TalkEntity {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "talk_id", nullable = false, columnDefinition = "BINARY(16)")
+    private UUID id;
+    @Column(name = "title", nullable = false, columnDefinition = "VARCHAR(100)")
+    private String title;
+    @Column(name = "description", nullable = false, columnDefinition = "VARCHAR(1000)")
+    private String description;
+    @Column(name = "date", nullable = false)
+    private LocalDateTime date;
+    @ManyToOne(cascade = ALL)
+    @JoinColumn(name = "speaker_id")
+    private SpeakerEntity speaker;
+
     public TalkEntity(String title, String description, LocalDateTime date, SpeakerEntity speaker) {
         this.title = title;
         this.description = description;
         this.date = date;
         this.speaker = speaker;
     }
-
-    @Id
-    @GeneratedValue
-    @Column(name = "talk_id", nullable = false, columnDefinition = "BINARY(16)")
-    private UUID id;
-
-    @Column(name = "title", nullable = false, columnDefinition = "VARCHAR(100)")
-    private String title;
-
-    @Column(name = "description", nullable = false, columnDefinition = "VARCHAR(1000)")
-    private String description;
-
-    @Column(name = "date", nullable = false)
-    private LocalDateTime date;
-
-    @ManyToOne(cascade = ALL)
-    @JoinColumn(name = "speaker_id")
-    private SpeakerEntity speaker;
 
 }

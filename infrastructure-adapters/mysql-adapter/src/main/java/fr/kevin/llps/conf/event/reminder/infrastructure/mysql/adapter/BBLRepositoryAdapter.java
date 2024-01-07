@@ -1,10 +1,10 @@
 package fr.kevin.llps.conf.event.reminder.infrastructure.mysql.adapter;
 
 import fr.kevin.llps.conf.event.reminder.domain.model.BBL;
+import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.BBLRepositoryPort;
 import fr.kevin.llps.conf.event.reminder.infrastructure.mysql.entity.BBLEntity;
 import fr.kevin.llps.conf.event.reminder.infrastructure.mysql.mapper.BBLMapper;
 import fr.kevin.llps.conf.event.reminder.infrastructure.mysql.repository.BBLRepository;
-import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.BBLRepositoryPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

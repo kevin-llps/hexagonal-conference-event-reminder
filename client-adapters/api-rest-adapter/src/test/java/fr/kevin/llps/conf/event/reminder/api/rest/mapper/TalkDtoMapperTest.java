@@ -2,6 +2,8 @@ package fr.kevin.llps.conf.event.reminder.api.rest.mapper;
 
 import fr.kevin.llps.conf.event.reminder.api.rest.dto.SpeakerDto;
 import fr.kevin.llps.conf.event.reminder.api.rest.dto.TalkDto;
+import fr.kevin.llps.conf.event.reminder.api.rest.samples.TalkDtoSample;
+import fr.kevin.llps.conf.event.reminder.api.rest.samples.TalkSample;
 import fr.kevin.llps.conf.event.reminder.domain.model.Speaker;
 import fr.kevin.llps.conf.event.reminder.domain.model.Talk;
 import org.junit.jupiter.api.Test;
@@ -10,8 +12,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static fr.kevin.llps.conf.event.reminder.api.rest.samples.TalkDtoSample.oneTalkDto;
-import static fr.kevin.llps.conf.event.reminder.api.rest.samples.TalkSample.oneTalk;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
@@ -26,8 +26,8 @@ class TalkDtoMapperTest {
 
     @Test
     void shouldMapToDtoList() {
-        Talk talk = oneTalk();
-        TalkDto expectedTalkDto = oneTalkDto();
+        Talk talk = TalkSample.oneTalk();
+        TalkDto expectedTalkDto = TalkDtoSample.oneTalkDto();
 
         Speaker speakerKevLps = new Speaker("kevin", "llps");
 

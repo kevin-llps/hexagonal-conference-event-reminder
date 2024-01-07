@@ -1,4 +1,4 @@
-package fr.kevin.llps.conf.event.reminder.client;
+package fr.kevin.llps.conf.event.reminder.bootstrap.client;
 
 import com.tngtech.archunit.core.importer.ImportOption.DoNotIncludeTests;
 import com.tngtech.archunit.junit.AnalyzeClasses;
@@ -7,11 +7,11 @@ import com.tngtech.archunit.lang.ArchRule;
 
 import static com.tngtech.archunit.junit.CacheMode.FOREVER;
 import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
-import static fr.kevin.llps.conf.event.reminder.PackagesAndLayers.BOOTSTRAP_PACKAGE;
-import static fr.kevin.llps.conf.event.reminder.PackagesAndLayers.CLIENT_PACKAGE;
+import static fr.kevin.llps.conf.event.reminder.bootstrap.PackagesAndLayers.BOOTSTRAP_PACKAGE;
+import static fr.kevin.llps.conf.event.reminder.bootstrap.PackagesAndLayers.CLIENT_PACKAGE;
 
 @AnalyzeClasses(
-        packages = "fr.carbon.it.tech.prez.archi.hexa.client",
+        packages = "fr.kevin.llps.conf.event.reminder.api.rest",
         cacheMode = FOREVER,
         importOptions = {DoNotIncludeTests.class})
 public class ClientDevelopmentRulesTest {

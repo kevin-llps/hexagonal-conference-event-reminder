@@ -3,6 +3,8 @@ package fr.kevin.llps.conf.event.reminder.api.rest.mapper;
 import fr.kevin.llps.conf.event.reminder.api.rest.dto.AttendeeDto;
 import fr.kevin.llps.conf.event.reminder.api.rest.dto.PracticeSessionDto;
 import fr.kevin.llps.conf.event.reminder.api.rest.dto.SpeakerDto;
+import fr.kevin.llps.conf.event.reminder.api.rest.samples.PracticeSessionDtoSample;
+import fr.kevin.llps.conf.event.reminder.api.rest.samples.PracticeSessionSample;
 import fr.kevin.llps.conf.event.reminder.domain.model.Attendee;
 import fr.kevin.llps.conf.event.reminder.domain.model.PracticeSession;
 import fr.kevin.llps.conf.event.reminder.domain.model.Speaker;
@@ -14,8 +16,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 
-import static fr.kevin.llps.conf.event.reminder.api.rest.samples.PracticeSessionDtoSample.onePracticeSessionDto;
-import static fr.kevin.llps.conf.event.reminder.api.rest.samples.PracticeSessionSample.onePracticeSession;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
@@ -33,8 +33,8 @@ class PracticeSessionDtoMapperTest {
 
     @Test
     void shouldMapToDto() {
-        PracticeSession practiceSession = onePracticeSession();
-        PracticeSessionDto expectedPracticeSessionDto = onePracticeSessionDto();
+        PracticeSession practiceSession = PracticeSessionSample.onePracticeSession();
+        PracticeSessionDto expectedPracticeSessionDto = PracticeSessionDtoSample.onePracticeSessionDto();
 
         Speaker speakerKevLps = new Speaker("kevin", "llps");
 

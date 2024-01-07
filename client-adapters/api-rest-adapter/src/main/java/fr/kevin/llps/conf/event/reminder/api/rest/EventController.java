@@ -1,8 +1,8 @@
 package fr.kevin.llps.conf.event.reminder.api.rest;
 
-import fr.kevin.llps.conf.event.reminder.domain.csv.CsvEvent;
 import fr.kevin.llps.conf.event.reminder.api.rest.dto.EventDto;
 import fr.kevin.llps.conf.event.reminder.api.rest.mapper.EventDtoMapper;
+import fr.kevin.llps.conf.event.reminder.domain.csv.CsvEvent;
 import fr.kevin.llps.conf.event.reminder.domain.ports.client.EventFileParserPort;
 import fr.kevin.llps.conf.event.reminder.domain.ports.client.EventServicePort;
 import lombok.RequiredArgsConstructor;

@@ -1,7 +1,7 @@
 package fr.kevin.llps.conf.event.reminder.api.rest.mapper;
 
-import fr.kevin.llps.conf.event.reminder.domain.model.Attendee;
 import fr.kevin.llps.conf.event.reminder.api.rest.dto.AttendeeDto;
+import fr.kevin.llps.conf.event.reminder.domain.model.Attendee;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

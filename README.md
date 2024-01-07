@@ -4,7 +4,8 @@ This project was designed to manage various conference events
 in order to remind upcoming events.
 
 The application is implemented by using hexagonal architecture.
-You can found [here](https://github.com/kevin-llps/conference-event-reminder) the same project using layers architecture. 
+You can found [here](https://github.com/kevin-llps/conference-event-reminder) the same project using layers
+architecture.
 
 ## Events
 

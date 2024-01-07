@@ -15,6 +15,22 @@ import static jakarta.persistence.CascadeType.ALL;
 @Table(name = "bbl")
 public class BBLEntity {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "bbl_id", nullable = false, columnDefinition = "BINARY(16)")
+    private UUID id;
+    @Column(name = "title", nullable = false, columnDefinition = "VARCHAR(100)")
+    private String title;
+    @Column(name = "description", nullable = false, columnDefinition = "VARCHAR(1000)")
+    private String description;
+    @Column(name = "date", nullable = false)
+    private LocalDateTime date;
+    @ManyToOne(cascade = ALL)
+    @JoinColumn(name = "speaker_id")
+    private SpeakerEntity speaker;
+    @Column(name = "company", nullable = false, columnDefinition = "VARCHAR(100)")
+    private String company;
+
     public BBLEntity(String title, String description, LocalDateTime date, SpeakerEntity speaker, String company) {
         this.title = title;
         this.description = description;
@@ -22,26 +38,5 @@ public class BBLEntity {
         this.speaker = speaker;
         this.company = company;
     }
-
-    @Id
-    @GeneratedValue
-    @Column(name = "bbl_id", nullable = false, columnDefinition = "BINARY(16)")
-    private UUID id;
-
-    @Column(name = "title", nullable = false, columnDefinition = "VARCHAR(100)")
-    private String title;
-
-    @Column(name = "description", nullable = false, columnDefinition = "VARCHAR(1000)")
-    private String description;
-
-    @Column(name = "date", nullable = false)
-    private LocalDateTime date;
-
-    @ManyToOne(cascade = ALL)
-    @JoinColumn(name = "speaker_id")
-    private SpeakerEntity speaker;
-
-    @Column(name = "company", nullable = false, columnDefinition = "VARCHAR(100)")
-    private String company;
 
 }
