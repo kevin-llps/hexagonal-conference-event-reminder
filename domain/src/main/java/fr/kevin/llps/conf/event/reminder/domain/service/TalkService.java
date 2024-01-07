@@ -7,13 +7,11 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
+//TODO 1 : Implement Port (exposed to api-rest-adapter)
 @RequiredArgsConstructor
-public class TalkService implements TalkServicePort {
+public class TalkService {
 
-    private final TalkRepositoryPort talkRepositoryPort;
+    // TODO 2 : Request Database adapter (Port)
 
-    public List<Talk> getTalks() {
-        return talkRepositoryPort.findAllOrderedByDate();
-    }
 
 }

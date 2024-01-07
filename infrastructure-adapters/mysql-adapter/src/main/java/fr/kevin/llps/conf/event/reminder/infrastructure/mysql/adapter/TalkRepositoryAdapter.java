@@ -10,19 +10,15 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+// TODO 3 : Implement adapter by using corresponding Port
 @Service
 @RequiredArgsConstructor
-public class TalkRepositoryAdapter implements TalkRepositoryPort {
+public class TalkRepositoryAdapter {
 
     private final TalkRepository talkRepository;
 
     private final TalkMapper talkMapper;
 
-    @Override
-    public List<Talk> findAllOrderedByDate() {
-        List<TalkEntity> talkEntities = talkRepository.findAllOrderedByDate();
-
-        return talkMapper.mapToDomain(talkEntities);
-    }
+    // TODO 4 : Request repository => findAllOrderedByDate()
 
 }

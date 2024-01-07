@@ -19,7 +19,7 @@ public class AppConfiguration {
     }
 
     @Bean
-    public TalkServicePort eventServicePort(TalkRepositoryPort talkRepositoryPort) {
+    public TalkServicePort talkServicePort(TalkRepositoryPort talkRepositoryPort) {
         return new TalkService(talkRepositoryPort);
     }
 
