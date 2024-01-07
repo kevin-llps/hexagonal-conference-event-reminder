@@ -15,29 +15,24 @@ import static jakarta.persistence.CascadeType.ALL;
 @Table(name = "speaker")
 public class SpeakerEntity {
 
-    public SpeakerEntity(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-    }
-
     @Id
     @GeneratedValue
     @Column(name = "speaker_id", nullable = false, columnDefinition = "BINARY(16)")
     private UUID id;
-
     @Column(name = "firstname", nullable = false, columnDefinition = "VARCHAR(100)")
     private String firstname;
-
     @Column(name = "lastname", nullable = false, columnDefinition = "VARCHAR(100)")
     private String lastname;
-
     @OneToMany(mappedBy = "speaker", cascade = ALL)
     private List<TalkEntity> talks;
-
     @OneToMany(mappedBy = "speaker", cascade = ALL)
     private List<BBLEntity> bbls;
-
     @OneToMany(mappedBy = "speaker", cascade = ALL)
     private List<PracticeSessionEntity> practiceSessions;
+
+    public SpeakerEntity(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 
 }

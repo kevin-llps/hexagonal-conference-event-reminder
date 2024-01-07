@@ -1,4 +1,4 @@
-package fr.kevin.llps.conf.event.reminder.domain.utils;
+package fr.kevin.llps.conf.event.reminder.domain;
 
 import lombok.RequiredArgsConstructor;
 
@@ -12,10 +12,6 @@ public class DateUtils {
 
     private final Clock clock;
 
-    public LocalDateTime getCurrentDate() {
-        return LocalDateTime.now(clock).truncatedTo(SECONDS);
-    }
-
     public static LocalDateTime mapToLocalDateTime(String date, String time) {
         return LocalDateTime.parse(mapToLocalDateTimeString(date, time));
     }
@@ -26,6 +22,10 @@ public class DateUtils {
         String localDate = String.join("-", dateParts[2], dateParts[1], dateParts[0]);
 
         return localDate + "T" + time;
+    }
+
+    public LocalDateTime getCurrentDate() {
+        return LocalDateTime.now(clock).truncatedTo(SECONDS);
     }
 
 }

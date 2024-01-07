@@ -1,8 +1,8 @@
 package fr.kevin.llps.conf.event.reminder.domain.service;
 
+import fr.kevin.llps.conf.event.reminder.domain.DateUtils;
 import fr.kevin.llps.conf.event.reminder.domain.model.BBL;
 import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.BBLRepositoryPort;
-import fr.kevin.llps.conf.event.reminder.domain.utils.DateUtils;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;

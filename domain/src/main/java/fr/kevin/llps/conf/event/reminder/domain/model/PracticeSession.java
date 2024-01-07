@@ -1,7 +1,7 @@
 package fr.kevin.llps.conf.event.reminder.domain.model;
 
+import fr.kevin.llps.conf.event.reminder.domain.DateUtils;
 import fr.kevin.llps.conf.event.reminder.domain.csv.CsvEvent;
-import fr.kevin.llps.conf.event.reminder.domain.utils.DateUtils;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -12,16 +12,14 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-import static fr.kevin.llps.conf.event.reminder.domain.model.EventType.PRACTICE_SESSION;
-
 @Getter
 public class PracticeSession implements Event {
 
-    private UUID id;
     private final String title;
     private final String description;
     private final LocalDateTime date;
     private final Speaker speaker;
+    private UUID id;
     private List<PracticeSessionAttendee> practiceSessionAttendees = new ArrayList<>();
 
     public PracticeSession(String title, String description, LocalDateTime date, Speaker speaker) {
@@ -75,7 +73,7 @@ public class PracticeSession implements Event {
 
     @Override
     public String getEventType() {
-        return PRACTICE_SESSION;
+        return EventType.PRACTICE_SESSION;
     }
 
     public void setPracticeSessionAttendees(List<PracticeSessionAttendee> practiceSessionAttendees) {

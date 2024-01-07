@@ -1,10 +1,10 @@
 package fr.kevin.llps.conf.event.reminder.api.rest.mapper;
 
+import fr.kevin.llps.conf.event.reminder.api.rest.dto.EventDto;
 import fr.kevin.llps.conf.event.reminder.domain.model.BBL;
 import fr.kevin.llps.conf.event.reminder.domain.model.Event;
 import fr.kevin.llps.conf.event.reminder.domain.model.PracticeSession;
 import fr.kevin.llps.conf.event.reminder.domain.model.Talk;
-import fr.kevin.llps.conf.event.reminder.api.rest.dto.EventDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 

@@ -1,10 +1,10 @@
 package fr.kevin.llps.conf.event.reminder.infrastructure.mysql.adapter;
 
 import fr.kevin.llps.conf.event.reminder.domain.model.PracticeSession;
+import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.PracticeSessionRepositoryPort;
 import fr.kevin.llps.conf.event.reminder.infrastructure.mysql.entity.PracticeSessionEntity;
 import fr.kevin.llps.conf.event.reminder.infrastructure.mysql.mapper.PracticeSessionMapper;
 import fr.kevin.llps.conf.event.reminder.infrastructure.mysql.repository.PracticeSessionRepository;
-import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.PracticeSessionRepositoryPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

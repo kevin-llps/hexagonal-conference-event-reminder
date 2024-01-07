@@ -1,13 +1,11 @@
 package fr.kevin.llps.conf.event.reminder.domain.model;
 
+import fr.kevin.llps.conf.event.reminder.domain.DateUtils;
 import fr.kevin.llps.conf.event.reminder.domain.csv.CsvEvent;
-import fr.kevin.llps.conf.event.reminder.domain.utils.DateUtils;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
-
-import static fr.kevin.llps.conf.event.reminder.domain.model.EventType.BBL;
 
 public record BBL(UUID id,
                   String title,
@@ -44,7 +42,7 @@ public record BBL(UUID id,
 
     @Override
     public String getEventType() {
-        return BBL;
+        return EventType.BBL;
     }
 
 }

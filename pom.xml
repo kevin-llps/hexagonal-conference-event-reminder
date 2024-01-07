@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -10,17 +10,17 @@
     <packaging>pom</packaging>
 
     <properties>
+        <domain.version>1.0.0-SNAPSHOT</domain.version>
+        <api-rest-adapter.version>1.0.0-SNAPSHOT</api-rest-adapter.version>
+        <mysql-adapter.version>1.0.0-SNAPSHOT</mysql-adapter.version>
         <java.version>17</java.version>
         <spring-boot.version>3.0.2</spring-boot.version>
         <lombok.version>1.18.26</lombok.version>
         <commons-csv.version>1.9.0</commons-csv.version>
-        <domain.version>1.0.0-SNAPSHOT</domain.version>
         <maven-failsafe-plugin.version>3.2.3</maven-failsafe-plugin.version>
         <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
         <commons-lang3.version>3.14.0</commons-lang3.version>
         <slf4j-api.version>1.7.32</slf4j-api.version>
-        <api-rest-adapter.version>1.0.0-SNAPSHOT</api-rest-adapter.version>
-        <mysql-adapter.version>1.0.0-SNAPSHOT</mysql-adapter.version>
         <archunit.version>0.17.0</archunit.version>
     </properties>
 
