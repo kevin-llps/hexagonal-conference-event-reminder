@@ -1,45 +1,59 @@
 package fr.kevin.llps.conf.event.reminder.infrastructure.mysql.adapter;
 
-import lombok.extern.slf4j.Slf4j;
+import fr.kevin.llps.conf.event.reminder.domain.model.Speaker;
+import fr.kevin.llps.conf.event.reminder.domain.model.Talk;
 import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
-@Slf4j
+//TODO 1 : Implement Port
 @Service
 public class MySQLDatabaseService {
 
-    private final DatabaseSecret databaseSecret;
+    private static final String SELECT_TALKS = "SELECT t.date, t.title, " +
+            "t.description, s.firstname, s.lastname " +
+            "FROM talk t JOIN speaker s " +
+            "ON t.speaker_id = s.speaker_id " +
+            "ORDER BY t.date;";
 
-    public MySQLDatabaseService(DatabaseSecret databaseSecret) {
-        this.databaseSecret = databaseSecret;
+    private final MySQLDatabaseConnectionService connectionService;
+
+    public MySQLDatabaseService(MySQLDatabaseConnectionService connectionService) {
+        this.connectionService = connectionService;
     }
 
-    public Connection openConnection() {
-        Connection connection = null;
+    @Override
+    public List<Talk> findAllOrderedByDate() {
+        try (Connection connection = connectionService.openConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TALKS);
+             ResultSet resultSet = preparedStatement.executeQuery()) {
 
-        try {
-            String url = "jdbc:" + databaseSecret.engine() + "://" + databaseSecret.host() + ":" + databaseSecret.port() + "/" +
-                    databaseSecret.dbname();
+            List<Talk> talks = new ArrayList<>();
 
-            connection = DriverManager.getConnection(url, databaseSecret.username(), databaseSecret.password());
-            connection.setAutoCommit(false);
+            while (resultSet.next()) {
+                LocalDateTime date = LocalDateTime.parse(resultSet.getString(1), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+                String title = resultSet.getString(2);
+                String description = resultSet.getString(3);
+                String speakerFirstname = resultSet.getString(4);
+                String speakerLastname = resultSet.getString(5);
 
-            return connection;
-        } catch (SQLException e) {
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e2) {
-                    log.error("Impossible to close connection", e2);
-                }
+                Speaker speaker = new Speaker(speakerFirstname, speakerLastname);
+
+                talks.add(new Talk(title, description, date, speaker));
             }
 
+            return talks;
+
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-
 
 }
