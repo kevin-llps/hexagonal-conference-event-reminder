@@ -2,10 +2,11 @@
 
 This project was designed to get all talks from data sources.
 
-Data sources available : `conference-event` (MySQL Database)
+Data sources availables : `conference-event` (MySQL Database)
 
-The application is implemented by using hexagonal architecture
-and was presented during Paris JUG session (2024-01-09).
+This is the final application solution presented during Paris JUG session (2024-01-09).
+
+It implements hexagonal architecture.
 
 ## API REST
 
