@@ -11,7 +11,7 @@ import static fr.kevin.llps.conf.event.reminder.bootstrap.PackagesAndLayers.BOOT
 import static fr.kevin.llps.conf.event.reminder.bootstrap.PackagesAndLayers.SERVER_PACKAGE;
 
 @AnalyzeClasses(
-        packages = "fr.carbon.it.tech.prez.archi.hexa.server",
+        packages = "fr.kevin.llps.conf.event.reminder.infrastructure",
         cacheMode = FOREVER,
         importOptions = {DoNotIncludeTests.class})
 public class ServerDevelopmentRulesTest {

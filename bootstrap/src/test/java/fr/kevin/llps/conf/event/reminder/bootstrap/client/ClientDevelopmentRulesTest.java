@@ -11,7 +11,7 @@ import static fr.kevin.llps.conf.event.reminder.bootstrap.PackagesAndLayers.BOOT
 import static fr.kevin.llps.conf.event.reminder.bootstrap.PackagesAndLayers.CLIENT_PACKAGE;
 
 @AnalyzeClasses(
-        packages = "fr.carbon.it.tech.prez.archi.hexa.client",
+        packages = "fr.kevin.llps.conf.event.reminder.api.rest",
         cacheMode = FOREVER,
         importOptions = {DoNotIncludeTests.class})
 public class ClientDevelopmentRulesTest {
