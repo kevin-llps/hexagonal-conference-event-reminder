@@ -7,6 +7,14 @@ The application is implemented by using hexagonal architecture.
 You can found [here](https://github.com/kevin-llps/conference-event-reminder) the same project using layers
 architecture.
 
+# Paris JUG Demo
+
+During Paris JUG session (2024-01-09), hexagonal architecture was implemented step by step.
+The initial application is only supporting Talks (current branch is supporting Talks, BBLs and Practice sessions).
+
+- Final solution can be found [here](https://github.com/kevin-llps/hexagonal-conference-event-reminder/tree/demo-paris-jug-solution).
+- Initial application before "step by step" migration can be found [here](https://github.com/kevin-llps/hexagonal-conference-event-reminder/tree/demo-paris-jug-todo).
+
 ## Events
 
 | Event name       | Description                                                                                     |
