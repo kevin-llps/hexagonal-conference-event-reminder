@@ -8,7 +8,7 @@ public class PackagesAndLayers {
     public static final String REST_ADAPTER_PACKAGE =
             "fr.kevin.llps.conf.event.reminder.api.rest..";
     public static final String SERVER_PACKAGE = "fr.kevin.llps.conf.event.reminder.infrastructure..";
-    public static final String POSTGRES_ADAPTER_PACKAGE =
+    public static final String MYSQL_ADAPTER_PACKAGE =
             "fr.kevin.llps.conf.event.reminder.infrastructure.mysql..";
 
     // JAVA, FRAMEWORKS AND LIBRARIES PACKAGES
@@ -22,5 +22,5 @@ public class PackagesAndLayers {
     public static final String CLIENT_LAYER = "Client";
     public static final String REST_ADAPTER_LAYER = "Rest";
     public static final String SERVER_LAYER = "Server";
-    public static final String POSTGRES_ADAPTER_LAYER = "Postgres";
+    public static final String MYSQL_ADAPTER_LAYER = "MySQL";
 }

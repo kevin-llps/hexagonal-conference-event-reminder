@@ -28,8 +28,8 @@ public class LayersDevelopmentRulesTest {
                     .definedBy(REST_ADAPTER_PACKAGE)
                     .layer(SERVER_LAYER)
                     .definedBy(SERVER_PACKAGE)
-                    .layer(POSTGRES_ADAPTER_LAYER)
-                    .definedBy(POSTGRES_ADAPTER_PACKAGE)
+                    .layer(MYSQL_ADAPTER_LAYER)
+                    .definedBy(MYSQL_ADAPTER_PACKAGE)
                     .whereLayer(DOMAIN_LAYER)
                     .mayOnlyBeAccessedByLayers(BOOTSTRAP_LAYER, CLIENT_LAYER, SERVER_LAYER)
                     .whereLayer(BOOTSTRAP_LAYER)
@@ -40,7 +40,7 @@ public class LayersDevelopmentRulesTest {
                     .mayOnlyBeAccessedByLayers(BOOTSTRAP_LAYER)
                     .whereLayer(SERVER_LAYER)
                     .mayOnlyBeAccessedByLayers(BOOTSTRAP_LAYER)
-                    .whereLayer(POSTGRES_ADAPTER_LAYER)
+                    .whereLayer(MYSQL_ADAPTER_LAYER)
                     .mayOnlyBeAccessedByLayers(BOOTSTRAP_LAYER)
                     .ignoreDependency("fr.kevin.llps.conf.event.reminder.Application", "fr.kevin.llps.conf.event.reminder.bootstrap.config.AppConfiguration");
 }

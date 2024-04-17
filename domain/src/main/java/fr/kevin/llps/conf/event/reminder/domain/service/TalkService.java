@@ -12,6 +12,10 @@ public class TalkService implements TalkServicePort {
 
     @Override
     public List<Talk> getTalks() {
+        // Retrieve Talks
+
+        // Specific Domain code
+
         return null;
     }
 
