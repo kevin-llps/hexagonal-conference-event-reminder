@@ -1,6 +1,7 @@
 package fr.kevin.llps.conf.event.reminder.domain.service;
 
 import fr.kevin.llps.conf.event.reminder.domain.csv.CsvEvent;
+import fr.kevin.llps.conf.event.reminder.domain.ddd.DomainService;
 import fr.kevin.llps.conf.event.reminder.domain.ports.client.EventFileParserPort;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -14,6 +15,7 @@ import java.util.List;
 import static fr.kevin.llps.conf.event.reminder.domain.csv.CsvProperties.DELIMITER;
 import static fr.kevin.llps.conf.event.reminder.domain.csv.CsvProperties.HEADERS;
 
+@DomainService
 public class EventFileParser implements EventFileParserPort {
 
     public List<CsvEvent> parse(InputStream inputStream) throws IOException {

@@ -1,6 +1,7 @@
 package fr.kevin.llps.conf.event.reminder.domain.service;
 
 import fr.kevin.llps.conf.event.reminder.domain.DateUtils;
+import fr.kevin.llps.conf.event.reminder.domain.ddd.DomainService;
 import fr.kevin.llps.conf.event.reminder.domain.model.Talk;
 import fr.kevin.llps.conf.event.reminder.domain.ports.infrastructure.TalkRepositoryPort;
 import lombok.RequiredArgsConstructor;
@@ -8,11 +9,16 @@ import lombok.RequiredArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@RequiredArgsConstructor
+@DomainService
 public class TalkService {
 
     private final TalkRepositoryPort talkRepositoryPort;
     private final DateUtils dateUtils;
+
+    public TalkService(TalkRepositoryPort talkRepositoryPort, DateUtils dateUtils) {
+        this.talkRepositoryPort = talkRepositoryPort;
+        this.dateUtils = dateUtils;
+    }
 
     public void importTalks(List<Talk> talks) {
         talkRepositoryPort.saveAll(talks);
