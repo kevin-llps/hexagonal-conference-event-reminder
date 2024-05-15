@@ -1,6 +1,7 @@
 package fr.kevin.llps.conf.event.reminder.domain.service;
 
 import fr.kevin.llps.conf.event.reminder.domain.DateUtils;
+import fr.kevin.llps.conf.event.reminder.domain.ddd.DomainService;
 import fr.kevin.llps.conf.event.reminder.domain.model.Attendee;
 import fr.kevin.llps.conf.event.reminder.domain.model.PracticeSession;
 import fr.kevin.llps.conf.event.reminder.domain.model.PracticeSessionAttendee;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
+@DomainService
 @RequiredArgsConstructor
 public class PracticeSessionService {
 

@@ -2,6 +2,7 @@ package fr.kevin.llps.conf.event.reminder.domain.service;
 
 import fr.kevin.llps.conf.event.reminder.domain.csv.CsvEvent;
 import fr.kevin.llps.conf.event.reminder.domain.csv.CsvProperties;
+import fr.kevin.llps.conf.event.reminder.domain.ddd.DomainService;
 import fr.kevin.llps.conf.event.reminder.domain.exception.EventExportException;
 import fr.kevin.llps.conf.event.reminder.domain.model.*;
 import fr.kevin.llps.conf.event.reminder.domain.ports.client.EventServicePort;
@@ -19,6 +20,7 @@ import java.util.List;
 import static org.apache.commons.lang3.CharUtils.LF;
 
 @Slf4j
+@DomainService
 @RequiredArgsConstructor
 public class EventService implements EventServicePort {
 
